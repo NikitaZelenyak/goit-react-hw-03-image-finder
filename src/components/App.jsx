@@ -89,6 +89,7 @@ export class App  extends Component  {
 
     return (
       <div>
+       
         <SearchBar onSubmit={this.handleSubmit}  ></SearchBar>
         <ImageGallery data={data} onClick={this.toggleModal} getLargeImageURL={this.getLargeImageURL} ></ImageGallery>
         {isOpen && <Modal  onClose={this.toggleModal}> <img src={largeImageURL} alt="" /> </Modal>}
