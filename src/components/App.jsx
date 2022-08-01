@@ -85,15 +85,15 @@ export class App  extends Component  {
   }
   
   render() {
-    const { data, isOpen,largeImageURL,isLoading } = this.state
-
+    const { data, isOpen,largeImageURL,isLoading,page } = this.state
+console.log(data);
     return (
       <div>
        
         <SearchBar onSubmit={this.handleSubmit}  ></SearchBar>
         <ImageGallery data={data} onClick={this.toggleModal} getLargeImageURL={this.getLargeImageURL} ></ImageGallery>
         {isOpen && <Modal  onClose={this.toggleModal}> <img src={largeImageURL} alt="" /> </Modal>}
-        {data.length !== 0 && <Button loadMore={this.loadMore}>{isLoading ? <TailSpin 
+        {data.length  > 11 * page  && <Button loadMore={this.loadMore}>{isLoading ? <TailSpin 
           width={35}
           height={35}
           radius="2"

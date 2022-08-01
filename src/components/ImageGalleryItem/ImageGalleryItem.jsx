@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 export  const  ImageGalleryItem = ({data, onClick,getLargeImageURL}) => {
 
 
- if (data) {
+
 
     
- return data.map(el => {
+ return  data &&  data.map(el => {
      return (
                  
                  <Item onClick={onClick }  key={el.id} >
@@ -20,7 +20,7 @@ export  const  ImageGalleryItem = ({data, onClick,getLargeImageURL}) => {
         })
 
          
-    }
+
    
   
 }
